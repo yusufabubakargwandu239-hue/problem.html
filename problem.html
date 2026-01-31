@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Laptop Problems & Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            color: #00ffcc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            color: #000;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #00cc99;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f4f4f4;
+            border-left: 6px solid #00cc99;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Laptop Problem Solver</h1>
+        <p>Type any laptop problem and get solution instantly</p>
+    </header>
+
+    <div class="container">
+        <h2>Describe your laptop problem</h2>
+        <textarea id="problem"
+            placeholder="Example: laptop not turning on, blue screen, keyboard not working..."></textarea>
+        <button onclick="solve()">Get Solution</button>
+        <div class="result" id="solution"></div>
+    </div>
+
+    <footer>© 2026 Laptop Support System</footer>
+
+    <script>
+        function solve() {
+            let p = document.getElementById("problem").value.toLowerCase();
+            let s = "";
+
+            if (p.includes("not turning on") || p.includes("power")) {
+                s = `
+🔌 <b>Laptop Not Turning On</b><br>
+✔ Check charger and power cable<br>
+✔ Try another power socket<br>
+✔ Remove battery and hold power button 30 seconds<br>
+✔ Visit technician if it fails
+`;
+            }
+
+            else if (p.includes("black screen") || p.includes("no display")) {
+                s = `
+🖥️ <b>Black Screen / No Display</b><br>
+✔ Increase brightness<br>
+✔ Connect external monitor<br>
+✔ Restart graphics driver<br>
+✔ Possible screen or GPU issue
+`;
+            }
+
+            else if (p.includes("slow") || p.includes("lag")) {
+                s = `
+🐌 <b>Slow Laptop</b><br>
+✔ Disable startup apps<br>
+✔ Delete junk files<br>
+✔ Add RAM<br>
+✔ Upgrade to SSD
+`;
+            }
+
+            else if (p.includes("overheat") || p.includes("hot")) {
+                s = `
+🔥 <b>Overheating</b><br>
+✔ Clean fan and vents<br>
+✔ Use cooling pad<br>
+✔ Change thermal paste<br>
+✔ Avoid blocking airflow
+`;
+            }
+
+            else if (p.includes("battery")) {
+                s = `
+🔋 <b>Battery Problem</b><br>
+✔ Reduce brightness<br>
+✔ Close background apps<br>
+✔ Do not overcharge<br>
+✔ Replace battery if weak
+`;
+            }
+
+            else if (p.includes("keyboard")) {
+                s = `
+⌨️ <b>Keyboard Not Working</b><br>
+✔ Restart laptop<br>
+✔ Update keyboard driver<br>
+✔ Check for dust or liquid damage<br>
+✔ Replace keyboard if damaged
+`;
+            }
+
+            else if (p.includes("touchpad") || p.includes("mouse")) {
+                s = `
+🖱️ <b>Touchpad / Mouse Issue</b><br>
+✔ Enable touchpad from settings<br>
+✔ Update driver<br>
+✔ Use external mouse to test
+`;
+            }
+
+            else if (p.includes("wifi") || p.includes("internet")) {
+                s = `
+📶 <b>Wi-Fi / Internet Problem</b><br>
+✔ Restart router<br>
+✔ Turn Wi-Fi off/on<br>
+✔ Update network driver<br>
+✔ Reset network settings
+`;
+            }
+
+            else if (p.includes("sound") || p.includes("audio")) {
+                s = `
+🔊 <b>No Sound</b><br>
+✔ Check volume level<br>
+✔ Select correct playback device<br>
+✔ Update sound driver<br>
+✔ Test with headphones
+`;
+            }
+
+            else if (p.includes("blue screen") || p.includes("bsod")) {
+                s = `
+💥 <b>Blue Screen Error</b><br>
+✔ Restart laptop<br>
+✔ Remove recent software<br>
+✔ Update Windows & drivers<br>
+✔ Possible RAM or hardware issue
+`;
+            }
+
+            else if (p.includes("virus") || p.includes("malware")) {
+                s = `
+🦠 <b>Virus / Malware</b><br>
+✔ Install antivirus<br>
+✔ Run full scan<br>
+✔ Delete infected files<br>
+✔ Avoid cracked software
+`;
+            }
+
+            else if (p.includes("storage") || p.includes("disk")) {
+                s = `
+💾 <b>Storage Full</b><br>
+✔ Delete unnecessary files<br>
+✔ Use Disk Cleanup<br>
+✔ Move files to external drive<br>
+✔ Upgrade hard drive
+`;
+            }
+
+            else if (p.includes("usb")) {
+                s = `
+🔌 <b>USB Not Working</b><br>
+✔ Try another USB port<br>
+✔ Restart laptop<br>
+✔ Update USB drivers<br>
+✔ Check USB device
+`;
+            }
+
+            else {
+                s = `
+❓ <b>Problem Not Recognized</b><br>
+✔ Please describe the issue clearly<br>
+✔ Or consult a professional technician
+`;
+            }
+
+            document.getElementById("solution").innerHTML = s;
+        }
+    </script>
+
+</body>
+
+</html>
